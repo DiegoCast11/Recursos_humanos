@@ -34,11 +34,11 @@ function displayEmployees(employees) {
         var p4 = document.createElement("p");
         var p5 = document.createElement("p");
         h1.innerHTML = employees[i].id;
-        p1.innerHTML = `Name: <a href="edit.html?id=${employees[i].id}">${employees[i].name}</a>`;
-        p2.innerHTML = `Lastname: ${employees[i].lastname}`;
-        p3.innerHTML = `Email: ${employees[i].mail}`;
-        p4.innerHTML = `Phone: ${employees[i].phone}`;
-        p5.innerHTML = `Address: ${employees[i].address}`;
+        p1.innerHTML = `Nombre: <a href="edit.html?id=${employees[i].id}">${employees[i].name}</a>`;
+        p2.innerHTML = `Apellido: ${employees[i].lastname}`;
+        p3.innerHTML = `Correo: ${employees[i].mail}`;
+        p4.innerHTML = `Teléfono: ${employees[i].phone}`;
+        p5.innerHTML = `Dirección: ${employees[i].address}`;
         div.appendChild(h1);
         div.appendChild(p1);
         div.appendChild(p2);
