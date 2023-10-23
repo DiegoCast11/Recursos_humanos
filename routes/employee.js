@@ -14,6 +14,13 @@ employee.get('/:name([A-Za-z]+)', async (req, res, next) => {
     res.status(200).json(emp) :  res.status(404).send({code: 404, message: "Employee not found"});
 });
 
+employee.get('/:id([0-9]{1,3})', async (req, res, next) => {
+    const id = req.params.id;
+    const emp = await db.query("SELECT * FROM employees WHERE id = ?", [id]);
+    emp !== undefined && emp.length !== 0 ?
+    res.status(200).json(emp) :  res.status(404).send({code: 404, message: "Employee not found"});
+});
+
 employee.post("/", async (req, res, next) => {
     const {name, lastname, phone, mail, address, pwd} = req.body;
     if (name && lastname && phone && mail && address && pwd){
